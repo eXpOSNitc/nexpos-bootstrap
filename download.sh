@@ -27,19 +27,19 @@ bootstrap() {
     wget -q https://github.com/eXpOSNitc/nexpos-bootstrap/archive/main.zip
     unzip -q main.zip
     rm main.zip
-    mv nexpos-bootstrap-main myexpos
+    mv nexpos-bootstrap-main mynexpos
     cd mynexpos
     ./download.sh
     rm Readme.md # Because the Readme is for the repo and will confuse if placed
-                 # in myexpos folder
+                 # in mynexpos folder
     echo "Download complete."
     cd ..
 }
 
 
 if [ -f "Makefile" ]; then
-    # If Makefile is there, continue downloading myexpos components
-    myexpos
+    # If Makefile is there, continue downloading mynexpos components
+    mynexpos
 else
     # The user is executing directly from `wget | sh`
     # so create the folder and download makefile
